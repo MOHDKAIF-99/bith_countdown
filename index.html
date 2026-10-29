@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Sanobia ✨</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#14061f;--bg2:#2e0c43;--rose:#ff7eb6;--gold:#ffd86b;--lilac:#c9a7ff;--text:#fff4fb;--muted:#dcc4ea;--glass:rgba(255,255,255,.09);--line:rgba(255,255,255,.2);color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg1) linear-gradient(165deg,var(--bg1),var(--bg2) 60%,#4a1257);background-attachment:fixed;color:var(--text);font-family:'Poppins',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;overflow-x:hidden}
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:0}
+main{position:relative;z-index:1}
+section{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 22px}
+.script{font-family:'Dancing Script','Brush Script MT',cursive;font-weight:700}
+h1{font-size:clamp(2.6rem,11vw,5.6rem);line-height:1.05;margin:0 0 18px;background:linear-gradient(90deg,var(--rose),var(--gold),var(--lilac),var(--rose));background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:300% 0}}
+.lead{font-size:clamp(1.05rem,4vw,1.5rem);color:var(--muted);margin:0 0 8px;font-weight:300}
+.hint{margin-top:44px;color:var(--gold);font-weight:600;font-size:1.05rem}
+.arrow{display:block;margin:10px auto 0;width:30px;height:30px;border-right:3px solid var(--gold);border-bottom:3px solid var(--gold);transform:rotate(45deg);animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(12px) rotate(45deg)}}
+h2{font-size:clamp(2rem,8vw,3.4rem);margin:0 0 10px;color:var(--gold)}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,2.5vw,22px);width:100%;max-width:640px;margin:30px 0 22px}
+.box{background:var(--glass);border:1px solid var(--line);border-radius:22px;padding:clamp(14px,4vw,30px) 4px;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.box b{display:block;font-size:clamp(1.8rem,9vw,3.6rem);font-weight:600;font-variant-numeric:tabular-nums;color:var(--text)}
+.box span{font-size:clamp(.65rem,2.6vw,.95rem);color:var(--lilac)}
+.box.pulse b{animation:pop .5s}
+@keyframes pop{40%{transform:scale(1.18);color:var(--rose)}}
+.status{color:var(--muted);font-size:1.05rem;max-width:30ch}
+#bday{display:none}
+#bday h2{font-size:clamp(2.4rem,10vw,4.6rem);color:var(--rose)}
+.gift{font-size:clamp(5rem,26vw,9rem);line-height:1;background:none;border:0;cursor:pointer;padding:10px;animation:wiggle 2.4s ease-in-out infinite;filter:drop-shadow(0 0 24px rgba(255,126,182,.6))}
+.gift:focus-visible,nav a:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:16px}
+.gift.open{animation:none;transform:scale(1.15) rotate(-6deg);transition:transform .4s}
+@keyframes wiggle{0%,60%,100%{transform:rotate(0)}65%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}85%{transform:rotate(-5deg)}}
+#msg{max-height:0;opacity:0;overflow:hidden;transition:max-height .8s,opacity .8s;max-width:34ch;font-size:clamp(1.1rem,4.4vw,1.5rem);line-height:1.6;color:var(--text)}
+#msg.show{max-height:420px;opacity:1;margin-top:18px}
+.wish{max-width:30ch;font-size:clamp(1.4rem,6vw,2.3rem);margin:22px 0;opacity:0;transform:translateY(24px);transition:opacity .9s,transform .9s}
+.wish.in{opacity:1;transform:none}
+.wish:nth-of-type(2){align-self:flex-end;text-align:right;color:var(--lilac)}
+.wish:nth-of-type(3){color:var(--rose)}
+.wishes{width:100%;max-width:720px;display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+footer{padding:30px 20px 60px;text-align:center;color:var(--muted);font-weight:300}
+nav{position:fixed;z-index:5;right:calc(10px + env(safe-area-inset-right,0px));top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:14px}
+nav a{width:11px;height:11px;border-radius:50%;background:var(--line);display:block;position:relative}
+nav a::before{content:"";position:absolute;inset:-10px}
+nav a.on{background:var(--gold);box-shadow:0 0 12px var(--gold)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="fx" aria-hidden="true"></canvas>
+<nav aria-label="Page guide">
+<a href="#hero" class="on" aria-label="Start"></a><a href="#count" aria-label="Countdown"></a><a href="#gift" aria-label="Surprise"></a><a href="#wishes" aria-label="Wishes"></a>
+</nav>
+<main>
+<section id="hero">
+<h1 class="script">Hey pretty girl!! 💖</h1>
+<p class="lead">You know something is coming…</p>
+<p class="lead">Touch the screen, it sparkles ✨</p>
+<p class="hint">Scroll down to see</p>
+<i class="arrow"></i>
+</section>
+
+<section id="count">
+<h2 class="script">Sanobia’s Birthday</h2>
+<p class="lead">30 October is almost here</p>
+<div class="cd" id="cd" role="timer" aria-live="off">
+<div class="box" id="bd"><b>00</b><span>Days</span></div>
+<div class="box" id="bh"><b>00</b><span>Hours</span></div>
+<div class="box" id="bm"><b>00</b><span>Minutes</span></div>
+<div class="box" id="bs"><b>00</b><span>Seconds</span></div>
+</div>
+<p class="status" id="status">Counting every second for you…</p>
+<div id="bday"><h2 class="script">Happy Birthday, Sanobia! 🎉</h2><p class="lead">Today the whole sky is sparkling for you.</p></div>
+<p class="hint">Keep scrolling, there’s a surprise</p>
+<i class="arrow"></i>
+</section>
+
+<section id="gift">
+<h2 class="script">A little surprise</h2>
+<p class="lead">Tap the gift</p>
+<button class="gift" id="giftBtn" aria-label="Open the gift">🎁</button>
+<p id="msg">Sanobia, you make ordinary days feel special. Wishing you a birthday full of laughter, cake and all the things your heart wants. 🎂✨</p>
+</section>
+
+<section id="wishes">
+<div class="wishes">
+<p class="wish script">May this year be softer on you and kinder to your dreams.</p>
+<p class="wish script">May every wish you make find its way back to you.</p>
+<p class="wish script">And may you always remember how bright you shine. 🌟</p>
+</div>
+<footer>Made with 💖 just for you</footer>
+</section>
+</main>
+
+<script>
+(function(){
+var c=document.getElementById('fx'),x=c.getContext('2d'),W,H,D=Math.min(window.devicePixelRatio||1,2);
+function size(){W=innerWidth;H=innerHeight;c.width=W*D;c.height=H*D;x.setTransform(D,0,0,D,0,0)}
+addEventListener('resize',size);size();
+var stars=[],n=Math.min(160,Math.round(W*H/9000));
+for(var i=0;i<n;i++)stars.push({x:Math.random(),y:Math.random(),r:Math.random()*1.6+.3,p:Math.random()*6.28,s:Math.random()*.03+.01});
+var parts=[],cols=['#ff7eb6','#ffd86b','#c9a7ff','#ffffff','#7ee7ff'];
+function spark(px,py,k,conf){
+for(var i=0;i<k;i++){var a=Math.random()*6.28,v=conf?Math.random()*9+3:Math.random()*1.6+.3;
+parts.push({x:px,y:py,vx:Math.cos(a)*v,vy:Math.sin(a)*v-(conf?5:0),g:conf?.22:.02,life:1,d:conf?.008:.03,r:conf?Math.random()*5+3:Math.random()*2.4+1,c:cols[i%5],conf:conf,rot:Math.random()*6,vr:Math.random()*.3-.15})}
+if(parts.length>700)parts.splice(0,parts.length-700)}
+function draw(t){
+x.clearRect(0,0,W,H);x.globalCompositeOperation='lighter';
+for(var i=0;i<stars.length;i++){var s=stars[i];s.p+=s.s;x.globalAlpha=.35+.65*Math.abs(Math.sin(s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x*W,s.y*H,s.r,0,6.283);x.fill()}
+for(var j=parts.length-1;j>=0;j--){var p=parts[j];p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.life-=p.d;p.rot+=p.vr;
+if(p.life<=0||p.y>H+20){parts.splice(j,1);continue}
+x.globalAlpha=Math.max(p.life,0);x.fillStyle=p.c;
+if(p.conf){x.save();x.translate(p.x,p.y);x.rotate(p.rot);x.fillRect(-p.r,-p.r/2,p.r*2,p.r);x.restore()}
+else{x.beginPath();x.arc(p.x,p.y,p.r,0,6.283);x.fill()}}
+x.globalAlpha=1;x.globalCompositeOperation='source-over';requestAnimationFrame(draw)}
+requestAnimationFrame(draw);
+addEventListener('pointermove',function(e){spark(e.clientX,e.clientY,2,false)});
+addEventListener('pointerdown',function(e){spark(e.clientX,e.clientY,14,false)});
+function party(){var i=0,t=setInterval(function(){spark(Math.random()*W,H*.3,40,true);if(++i>6)clearInterval(t)},300)}
+
+var T=new Date(2026,9,30,0,0,0).getTime(),done=false,last=-1;
+var el={d:document.getElementById('bd'),h:document.getElementById('bh'),m:document.getElementById('bm'),s:document.getElementById('bs')};
+function pad(v){return v<10?'0'+v:''+v}
+function set(k,v){var b=el[k].firstElementChild;if(b.textContent!==v){b.textContent=v;if(k==='s'){el.s.classList.remove('pulse');void el.s.offsetWidth;el.s.classList.add('pulse')}}}
+function tick(){
+var diff=T-Date.now();
+if(diff<=0){if(!done){done=true;document.getElementById('cd').style.display='none';document.getElementById('status').style.display='none';document.getElementById('bday').style.display='block';party()}return}
+var tot=Math.floor(diff/1000);
+set('d',pad(Math.floor(tot/86400)));set('h',pad(Math.floor(tot%86400/3600)));set('m',pad(Math.floor(tot%3600/60)));set('s',pad(tot%60));
+document.getElementById('status').textContent=diff<86400000?'Less than a day to go. Almost there! 💫':'Counting every second for you…'}
+tick();setInterval(tick,1000);
+
+var gb=document.getElementById('giftBtn'),msg=document.getElementById('msg');
+gb.addEventListener('click',function(e){e.stopPropagation();var r=gb.getBoundingClientRect();gb.classList.add('open');msg.classList.add('show');spark(r.left+r.width/2,r.top+r.height/2,90,true)});
+
+var secs=document.querySelectorAll('section'),dots=document.querySelectorAll('nav a'),wishes=document.querySelectorAll('.wish');
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){for(var i=0;i<secs.length;i++)dots[i].classList.toggle('on',secs[i]===e.target)}})},{threshold:.55});
+secs.forEach(function(s){io.observe(s)});
+var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');var r=e.target.getBoundingClientRect();spark(r.left+r.width/2,r.top+r.height/2,18,false)}})},{threshold:.6});
+wishes.forEach(function(w,i){w.style.transitionDelay=(i*.15)+'s';io2.observe(w)})
+}else{wishes.forEach(function(w){w.classList.add('in')})}
+})();
+</script>
+</body>
+</html>
